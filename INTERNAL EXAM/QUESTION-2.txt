@@ -1,0 +1,60 @@
+package exam;
+import java.util.Scanner;
+class account  {
+	int n;
+	int am;
+	int b;
+	
+	
+	public account() {
+		
+	}
+	public void display(int n,int am){
+		System.out.println("your account number is"+n);
+		System.out.println("your account amount is"+am);
+		
+		
+		
+		
+	}
+	
+}
+
+public class UserDefinedException {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		account ac=new account();
+		System.out.println("Enter the account number");
+		int p=s.nextInt();
+		System.out.println("Enter the account amount ");
+		int q=s.nextInt();
+		
+		ac.display(p,q);
+		System.out.println("Enter the aamount to withdraw");
+		int t=s.nextInt();
+		
+		
+		try{	
+			if(t<q){
+					throw new notsufficentfund("you can withdraw the money"+t);
+			}
+			else if(t>q){
+				throw new notsufficentfund("not sufficent balance");
+			}
+			else{
+				throw new notsufficentfund(" successfull");
+			}
+				
+			}catch(Exception e){
+				System.out.println(e.getMessage());
+		}
+		
+	
+	}
+}
+class notsufficentfund extends Exception{
+	notsufficentfund(String msg){
+		super(msg);
+	}
+}

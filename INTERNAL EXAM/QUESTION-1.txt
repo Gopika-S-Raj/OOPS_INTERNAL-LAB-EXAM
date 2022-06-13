@@ -1,0 +1,85 @@
+package exam;
+
+import java.util.Scanner;
+
+
+
+ class box{
+	int length;
+	int breadth;
+	int height;
+	box(int l,int b,int h){
+		length=l;
+		breadth=b;
+		height=h;
+		
+	}
+ }
+
+	 class box3d extends box{
+		 
+		private static int l;
+		private static int b;
+		private static int h;
+		box3d() {
+			super(l, b, h);
+			
+		}
+		
+		
+
+		public  void area(int l,int b){
+				
+				System.out.println("the area is:"+l*b);
+				
+			}
+		public void volume(int l,int b,int h){
+			System.out.println("the volume is:"+l*b*h);
+			
+			
+		}
+		
+	}
+ 
+	
+
+
+public class mainclass {
+	
+	
+
+	
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		box3d obj1=new box3d();
+		
+		System.out.println(" the choices are\n 1.area\n2.voloume\n");
+		
+		int ch;
+		do{
+			System.out.println("enter the choice");
+			 ch=sc.nextInt();
+			switch(ch){
+			case 1:System.out.println("enter the length");
+			       int a=sc.nextInt();
+			       System.out.println("enter the breadth");
+			       int b=sc.nextInt();
+			       obj1.area(a,b);
+			       break;
+			case 2:System.out.println("enter the length");
+		           int c=sc.nextInt();
+		          System.out.println("enter the breadth");
+		          int d=sc.nextInt();
+		           
+		           System.out.println("enter the height");
+			          int e=sc.nextInt();
+		              obj1.volume(c, d, e);
+		              break;
+		    default:    System.out.println("invalid entry");      
+			}
+		}while(ch!=0);
+
+	}
+
+}
